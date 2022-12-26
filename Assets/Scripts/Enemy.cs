@@ -69,7 +69,13 @@ public class Enemy : MonoBehaviour
         }
 
     }
-    
+
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.layer == LayerMask.NameToLayer("Spells"))
+        TakeDamage(1);
+    }
+
 
     private void OnDrawGizmosSelected()
     {

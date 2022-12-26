@@ -15532,6 +15532,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbbd12b30b21ae04bb23fe7b0462003e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1052050130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1052050131}
+  - component: {fileID: 1052050133}
+  - component: {fileID: 1052050132}
+  m_Layer: 5
+  m_Name: Fill Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1052050131
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052050130}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1799226669}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1052050132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052050130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.27450982, g: 0.27450982, b: 0.27450982, a: 0.5686275}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 259c036246a668f438f086d45c8b7471, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 0
+  m_FillClockwise: 0
+  m_FillOrigin: 2
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1052050133
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052050130}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1066162076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15657,6 +15731,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1875653026634461015, guid: 1fb372bc103ce174dba6cdbc81985087,
+        type: 3}
+      propertyPath: skill.Array.data[2]
+      value: 
+      objectReference: {fileID: 1817323102}
+    - target: {fileID: 1875653026634461015, guid: 1fb372bc103ce174dba6cdbc81985087,
+        type: 3}
+      propertyPath: skill.Array.data[3]
+      value: 
+      objectReference: {fileID: 1052050132}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fb372bc103ce174dba6cdbc81985087, type: 3}
 --- !u!1 &1174687040 stripped
@@ -21508,6 +21592,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1799226669 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1875653024933062847, guid: 1fb372bc103ce174dba6cdbc81985087,
+    type: 3}
+  m_PrefabInstance: {fileID: 1066162076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1817323102 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1875653026601380076, guid: 1fb372bc103ce174dba6cdbc81985087,
+    type: 3}
+  m_PrefabInstance: {fileID: 1066162076}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1935440309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3669888769157567620, guid: 38ed22296e2f82f468a2af98d4531fb3,
@@ -21782,6 +21884,18 @@ PrefabInstance:
       propertyPath: laserIcon
       value: 
       objectReference: {fileID: 1425660433}
+    - target: {fileID: 6684074075749501356, guid: aff65d950e7766f4a81ab82094b4f661,
+        type: 3}
+      propertyPath: particlesSpell
+      value: 
+      objectReference: {fileID: 5930955993500428765, guid: 9cb040704f7504946a89300ef7b11b61,
+        type: 3}
+    - target: {fileID: 6684074075749501356, guid: aff65d950e7766f4a81ab82094b4f661,
+        type: 3}
+      propertyPath: chasingProjectile
+      value: 
+      objectReference: {fileID: 5473900776452101159, guid: 1a2aa26f4ec716540b92f31e09e0e698,
+        type: 3}
     - target: {fileID: 7105067266332059208, guid: aff65d950e7766f4a81ab82094b4f661,
         type: 3}
       propertyPath: m_RootOrder

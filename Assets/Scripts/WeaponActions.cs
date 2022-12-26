@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class WeaponActions : MonoBehaviour
 {
     public GameObject fireball;
+    public GameObject chasingProjectile;
+    public GameObject particlesSpell;
     public GameObject bane;
     public GameObject laser;
     public Transform shotPoint;
@@ -173,6 +175,30 @@ public class WeaponActions : MonoBehaviour
                     gun.gameObject.GetComponent<Animator>().enabled = true;
                 }
                 break;
+            case 3:
+                laserIsActive = false;
+                Destroy(las);
+                if (SkillBar.GetSkillsCD()[idOfSkillSocket - 1] <= 0)
+                {
+                    if (Input.GetMouseButton(0) && inventory.activeSelf == false)
+                    {
+                        SkillBar.GetSkillsCD()[idOfSkillSocket - 1] = SkillBar.GetStartSkillsCD()[idOfSkillSocket - 1];
+                        StartCoroutine(CastChasingProjectile());
+                    }
+                }
+                break;
+            case 4:
+                laserIsActive = false;
+                Destroy(las);
+                if (SkillBar.GetSkillsCD()[idOfSkillSocket - 1] <= 0)
+                {
+                    if (Input.GetMouseButton(0) && inventory.activeSelf == false)
+                    {
+                        SkillBar.GetSkillsCD()[idOfSkillSocket - 1] = SkillBar.GetStartSkillsCD()[idOfSkillSocket - 1];
+                        StartCoroutine(CastParticlesSpell());
+                    }
+                }
+                break;
             default:
                 break;
         }
@@ -199,6 +225,34 @@ public class WeaponActions : MonoBehaviour
         gun.SetBool("IsAttack", false);
         yield return new WaitForSeconds(0.2f);
         Instantiate(fireball, shotPoint.position, transform.rotation);
+        yield return new WaitForSeconds(0.2f);
+        //gun.enabled = false;
+        player.SetBool("IsAttack", false);
+        Character.attack = false;
+    }
+
+    private IEnumerator CastChasingProjectile()
+    {
+        gun.SetBool("IsAttack", true);
+        player.SetBool("IsAttack", true);
+        yield return new WaitForSeconds(0.1f);
+        gun.SetBool("IsAttack", false);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(chasingProjectile, shotPoint.position, transform.rotation);
+        yield return new WaitForSeconds(0.2f);
+        //gun.enabled = false;
+        player.SetBool("IsAttack", false);
+        Character.attack = false;
+    }
+
+    private IEnumerator CastParticlesSpell()
+    {
+        gun.SetBool("IsAttack", true);
+        player.SetBool("IsAttack", true);
+        yield return new WaitForSeconds(0.1f);
+        gun.SetBool("IsAttack", false);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(particlesSpell, shotPoint.position, transform.rotation);
         yield return new WaitForSeconds(0.2f);
         //gun.enabled = false;
         player.SetBool("IsAttack", false);

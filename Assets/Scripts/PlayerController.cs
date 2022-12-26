@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(inv.slots[0].GetComponent<SlotData>().id);
         if (inv.slots[0].GetComponent<SlotData>().id != 0)
             hpPotion.fillAmount = 0;
         else
