@@ -45,7 +45,6 @@ public class Character : MonoBehaviour
     void Update()
     {
         Health = 100 + sTree.healthPool;
-        Debug.Log(Health + " " + currentHealth);
         if (currentHealth <= 0)
             StartCoroutine(PlayerDead());
         ExpCrystal.fillAmount = (float)currentEXP / (float)EXPToLevel;
