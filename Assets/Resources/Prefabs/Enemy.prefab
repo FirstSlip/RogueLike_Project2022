@@ -163,7 +163,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5819f2ae28b7fb14aa9cec3ac6397b01, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,7 +183,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 7025154549869057301, guid: 1373b19b794b21c429477898214f3dca,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
+  exp: 2
   damage: 10
   attackPos: {fileID: 9025349318616551718}
   attackRange: 1.3

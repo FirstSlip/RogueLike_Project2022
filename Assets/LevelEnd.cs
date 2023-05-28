@@ -65,6 +65,6 @@ public class LevelEnd : MonoBehaviour
             black.color = new Color(0, 0, 0, i / 100);
             yield return new WaitForSeconds(0.01f);
         }
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 }

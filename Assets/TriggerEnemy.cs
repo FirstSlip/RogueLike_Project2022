@@ -35,10 +35,12 @@ public class TriggerEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        borders = GameObject.FindGameObjectsWithTag("Border");
+        if (collision.tag == "Player")
         {
             foreach(var e in borders)
             {
+                Debug.Log(borders.Length);
                 e.GetComponent<SpriteRenderer>().enabled = true;
                 e.GetComponent<BoxCollider2D>().enabled = true;
             }

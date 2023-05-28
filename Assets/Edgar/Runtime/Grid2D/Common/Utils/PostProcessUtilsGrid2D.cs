@@ -102,6 +102,7 @@ namespace Edgar.Unity
 
                 tilemapsRoot = Object.Instantiate(tilemapsSourceRoot, level.RootGameObject.transform);
                 tilemapsRoot.name = GeneratorConstantsGrid2D.TilemapsRootName;
+                
 
                 foreach (var tilemap in tilemapsRoot.GetComponentsInChildren<Tilemap>())
                 {
