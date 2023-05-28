@@ -8,6 +8,8 @@ public class BossTrigger : MonoBehaviour
     public static bool bossIsDead = false;
     public GameObject boss;
     public GameObject room;
+    public GameObject music;
+    public AudioClip bossMusic;
     private bool triggered = false;
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,8 @@ public class BossTrigger : MonoBehaviour
             collision.GetComponent<Animator>().SetFloat("VerticalStop", 1);
             collision.GetComponentInChildren<WeaponActions>().enabled = false;
             triggered = true;
+            music.GetComponent<AudioSource>().clip = bossMusic;
+            music.GetComponent<AudioSource>().Play();
             StartCoroutine(MoveCamera(collision));
         }
     }
