@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour
         if (hitInfo.collider != null && !isHited)
         {
             isHited = true;
+            Debug.Log("Hit");
             if (hitInfo.collider.CompareTag("Enemy"))
             {
                 hitInfo.collider.gameObject.GetComponentInParent<Enemy>().TakeDamage(damage);
@@ -35,7 +36,7 @@ public class Projectile : MonoBehaviour
             //Destroy(gameObject);
         }
         transform.Translate(Vector2.right * speed * Time.deltaTime);
-        if (lifetime >= 10f && !isHited)
+        if (lifetime >= 5f && !isHited)
         {
             isHited = true;
             for (int i = 0; i < 10; i++)

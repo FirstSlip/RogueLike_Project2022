@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/TraderLocation.unity
+    guid: c7c50cd5f51936147b3ff2f12909265a
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: a8973b38877bfed4aa2d2406b87b4280
   m_configObjects: {}

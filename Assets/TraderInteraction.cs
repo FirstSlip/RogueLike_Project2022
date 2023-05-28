@@ -6,9 +6,12 @@ public class TraderInteraction : MonoBehaviour
 {
     private GameObject inventory;
     private GameObject hero;
+    private bool interact;
+    public GameObject dialog;
     // Start is called before the first frame update
     void Start()
     {
+        interact = false;
         hero = GameObject.FindGameObjectWithTag("Player");
         inventory = GameObject.Find("Canvas");
     }
@@ -17,13 +20,13 @@ public class TraderInteraction : MonoBehaviour
     void Update()
     {
         Vector2 range = hero.transform.position - transform.position;
-        if (range.sqrMagnitude <= 4f)
+        if (range.sqrMagnitude <= 4f && !interact)
         {
             GetComponentsInChildren<SpriteRenderer>()[1].enabled = true;
             if (Input.GetKeyDown(KeyCode.E))
             {
-                inventory.GetComponent<Inventory>().AddItem(gameObject.name);
-                Destroy(gameObject);
+                interact = true;
+                dialog.SetActive(true);
             }
         }
         else

@@ -22,7 +22,7 @@ public class TextAppearence : MonoBehaviour
         dialog.text = "";
         str = "Hello, traveller!\n" +
             "You showed power by defeating this embodiment\nof evil. " +
-            "I have something for you, it will help you in\nthis difficult adventure.";
+            "Keep going, we'll meet again later";
         dialogCor = StartCoroutine(AddElementsToText());
         e_button = GetComponentsInChildren<Image>()[4];
         e_button.enabled = false;
