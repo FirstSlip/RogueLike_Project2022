@@ -2570,6 +2570,18 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &300051439 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1875653026601380076, guid: 1fb372bc103ce174dba6cdbc81985087,
+    type: 3}
+  m_PrefabInstance: {fileID: 2101110961}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &307173888 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1875653025782287971, guid: 1fb372bc103ce174dba6cdbc81985087,
@@ -16548,7 +16560,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 2101110961}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -17515,7 +17527,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelUpMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1494737372}
     - target: {fileID: 920705085240856266, guid: aff65d950e7766f4a81ab82094b4f661,
         type: 3}
       propertyPath: levelUpText
@@ -17651,6 +17663,17 @@ PrefabInstance:
     - target: {fileID: 6684074075749501356, guid: aff65d950e7766f4a81ab82094b4f661,
         type: 3}
       propertyPath: laserIcon
+      value: 
+      objectReference: {fileID: 1268759325}
+    - target: {fileID: 6684074075749501356, guid: aff65d950e7766f4a81ab82094b4f661,
+        type: 3}
+      propertyPath: waterBall
+      value: 
+      objectReference: {fileID: 5243460634178309321, guid: beb13ff99374ca04c958f5e59a4e953b,
+        type: 3}
+    - target: {fileID: 6684074075749501356, guid: aff65d950e7766f4a81ab82094b4f661,
+        type: 3}
+      propertyPath: waterBallIcon
       value: 
       objectReference: {fileID: 1268759325}
     - target: {fileID: 7105067266332059208, guid: aff65d950e7766f4a81ab82094b4f661,
@@ -32282,6 +32305,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1875653024841465620, guid: 1fb372bc103ce174dba6cdbc81985087,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1875653026410338759, guid: 1fb372bc103ce174dba6cdbc81985087,
         type: 3}
       propertyPath: m_Name
@@ -32392,6 +32420,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1875653026634461015, guid: 1fb372bc103ce174dba6cdbc81985087,
+        type: 3}
+      propertyPath: skill.Array.data[2]
+      value: 
+      objectReference: {fileID: 300051439}
     - target: {fileID: 8372770949323326897, guid: 1fb372bc103ce174dba6cdbc81985087,
         type: 3}
       propertyPath: m_LocalScale.x

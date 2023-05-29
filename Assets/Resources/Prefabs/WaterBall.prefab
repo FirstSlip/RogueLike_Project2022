@@ -229,3 +229,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impact: {fileID: 7400000, guid: 8441c5134499dc14b9e01c8d5fb450df, type: 2}
+  isUpgraded: 0

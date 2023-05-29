@@ -2109,6 +2109,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1875653024841465620, guid: 1fb372bc103ce174dba6cdbc81985087,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1875653026410338759, guid: 1fb372bc103ce174dba6cdbc81985087,
         type: 3}
       propertyPath: m_Name
@@ -2727,7 +2732,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1066162076}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -4090,7 +4095,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelUpMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 130397881}
     - target: {fileID: 920705085240856266, guid: aff65d950e7766f4a81ab82094b4f661,
         type: 3}
       propertyPath: levelUpText
@@ -4234,6 +4239,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5243460634178309321, guid: beb13ff99374ca04c958f5e59a4e953b,
         type: 3}
+    - target: {fileID: 6684074075749501356, guid: aff65d950e7766f4a81ab82094b4f661,
+        type: 3}
+      propertyPath: waterBallIcon
+      value: 
+      objectReference: {fileID: 1425660433}
     - target: {fileID: 7105067266332059208, guid: aff65d950e7766f4a81ab82094b4f661,
         type: 3}
       propertyPath: m_RootOrder

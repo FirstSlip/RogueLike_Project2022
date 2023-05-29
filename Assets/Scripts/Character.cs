@@ -25,14 +25,15 @@ public class Character : MonoBehaviour
     public GameObject levelUpMenu;
     public GameObject levelUpText;
     public SkillTree sTree;
-    public static bool haveLaser;
+    public static bool haveWaterBall;
     public Image blackScreen;
     public Text died;
 
     // Start is called before the first frame update
     void Start()
     {
-        haveLaser = false;
+        haveWaterBall = false;
+        Debug.Log(sTree.healthPool);
         Health = 100 + sTree.healthPool;
         currentHealth = Health;
         levelUpMenu.SetActive(false);

@@ -8,6 +8,7 @@ public class WaterBall : MonoBehaviour, ISpell
     private Animator anim;
     [SerializeField]
     private AnimationClip impact;
+    public bool isUpgraded = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +25,21 @@ public class WaterBall : MonoBehaviour, ISpell
     public void OnImpact(RaycastHit2D hitInfo)
     {
         Debug.Log(hitInfo.distance);
-        StartCoroutine(AddWaterExplode(hitInfo));
+        if (isUpgraded)
+        {
+            StartCoroutine(AddWaterExplode(hitInfo));
+        }
+        else StartCoroutine(AddWaterExplode(hitInfo));
     }
 
     private IEnumerator AddWaterExplode(RaycastHit2D hit)
+    {
+        anim.Play("WaterBallImpact");
+        yield return new WaitForSeconds(0.8f);
+        Destroy(gameObject);
+    }
+
+    private IEnumerator AddWaterTornado(RaycastHit2D hit)
     {
         anim.Play("WaterBallImpact");
         yield return new WaitForSeconds(0.8f);

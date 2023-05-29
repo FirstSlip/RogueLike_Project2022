@@ -1,7 +1,28 @@
 fileFormatVersion: 2
 guid: 86983cc75693fed40a098cfcbe89071f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8498334219677705280
+    second: W_Button
+  - first:
+      213: -2724670581057100566
+    second: A_Button
+  - first:
+      213: 808318449433572707
+    second: S_Button
+  - first:
+      213: 3493486823682509238
+    second: D_Button
+  - first:
+      213: -1206946802874171612
+    second: RClick_Button
+  - first:
+      213: 5616939333883194041
+    second: LClick_Button
+  - first:
+      213: 392451520889228816
+    second: KeyBoard_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -23,8 +44,6 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
-  vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -33,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -56,12 +75,9 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
-  flipbookRows: 1
-  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -78,7 +94,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -271,7 +287,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -279,6 +295,153 @@ TextureImporter:
       bones: []
       spriteID: d6328d20d65acfb4598385094d1717f7
       internalID: 2029026777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Button
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 172
+        width: 52
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 044af6a52f520f570800000000000000
+      internalID: 8498334219677705280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_Button
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 120
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4622eda86003ad0800000000000000
+      internalID: -2724670581057100566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S_Button
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 120
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 365f1ebd859b73b00800000000000000
+      internalID: 808318449433572707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_Button
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 120
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b98a11c1cb5b7030800000000000000
+      internalID: 3493486823682509238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RClick_Button
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 8
+        width: 36
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f34e70740104fe0800000000000000
+      internalID: -1206946802874171612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LClick_Button
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 8
+        width: 36
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bae609709063fd40800000000000000
+      internalID: 5616939333883194041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeyBoard_6
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 172
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e0a263494427500800000000000000
+      internalID: 392451520889228816
       vertices: []
       indices: 
       edges: []
@@ -293,15 +456,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      E_Button: 2029026777
-      L_Button: -32524487
-      1_Button: -1929656280
-      2_Button: -1498630165
-      4_Button: 1847472172
-      Shift_Button: 1820430285
-      3_Button: -619446341
-      H_Button: -742635491
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

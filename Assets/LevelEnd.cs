@@ -70,6 +70,6 @@ public class LevelEnd : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         music.Stop();
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 }

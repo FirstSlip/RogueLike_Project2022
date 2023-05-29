@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 206493814}
   - component: {fileID: 206493813}
   m_Layer: 5
-  m_Name: Image
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 1597968552}
   - component: {fileID: 1597968551}
   m_Layer: 5
-  m_Name: Image
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1132,7 +1132,7 @@ GameObject:
   - component: {fileID: 1875653024841465621}
   - component: {fileID: 1875653024841465620}
   m_Layer: 5
-  m_Name: Bane
+  m_Name: WaterBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1154,8 +1154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 95, y: 95}
+  m_AnchoredPosition: {x: -0.000013351, y: -0.0000019073}
+  m_SizeDelta: {x: 78.330505, y: 39.165253}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1875653024841465621
 CanvasRenderer:
@@ -1184,7 +1184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6952839242997507281, guid: c023d59b151e9264f9ad6e98c6b9e057,
+  m_Sprite: {fileID: 8768381355604744468, guid: 4a6f3b31e55d57d46b6ee373b3aea9c6,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0

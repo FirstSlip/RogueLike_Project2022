@@ -65,13 +65,13 @@ public class SkillBar : MonoBehaviour
                 skill[i].fillAmount = skillsCD[i] / startSkillsCD[i];
             }
         }
-        
+
         for (int i = 0; i < 4; i++)
         {
-            if (ChoosenSkill-1 != i)
+            if (ChoosenSkill - 1 != i)
                 skillChoice[i].GetComponent<Image>().enabled = false;
             else
-                skillChoice[ChoosenSkill-1].GetComponent<Image>().enabled = true;
+                skillChoice[ChoosenSkill - 1].GetComponent<Image>().enabled = true;
         }
     }
 }
