@@ -65,4 +65,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         gameIsPaused = false;
     }
+    void OnDestroy()
+    {
+        Resume();
+    }
 }

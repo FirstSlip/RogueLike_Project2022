@@ -37,7 +37,7 @@ public class SkillBar : MonoBehaviour
     void Start()
     {
         skillsCD = new float[] { 0, 0, 0, 0 };
-        startSkillsCD = new float[] { 1, 4, 4, 4 };
+        startSkillsCD = new float[] { 1, 1, 1, 4 };
         for (int i = 0; i < 4; i++)
         {
             skillChoice[i].GetComponent<Image>().enabled = false;
