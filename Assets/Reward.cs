@@ -21,7 +21,7 @@ public class Reward : MonoBehaviour
             GetComponentsInChildren<SpriteRenderer>()[1].enabled = true;
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Character.haveLaser = true;
+                Character.haveWaterBall = true;
                 Destroy(gameObject);
             }
         }

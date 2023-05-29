@@ -40,7 +40,6 @@ public class TriggerEnemy : MonoBehaviour
         {
             foreach(var e in borders)
             {
-                Debug.Log(borders.Length);
                 e.GetComponent<SpriteRenderer>().enabled = true;
                 e.GetComponent<BoxCollider2D>().enabled = true;
             }

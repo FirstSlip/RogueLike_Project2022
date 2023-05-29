@@ -11,7 +11,7 @@ public class SkillTree : MonoBehaviour
     public int healthPool = 0;
     public int reducedDashCD = 0;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         SaveSerial.LoadGame();
         if (SaveSerial.playerStats.ContainsKey("intelligence"))
@@ -42,6 +42,7 @@ public class SkillTree : MonoBehaviour
         //Character.currentHealth = Character.Health;
         Debug.Log("Loaded Stats: " + intelligence + " " + strength + " " + dexterity);
     }
+    
 
     // Update is called once per frame
     void Update()

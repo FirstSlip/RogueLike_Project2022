@@ -70,6 +70,6 @@ public class TraderRoomExit : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         music.Stop();
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 }

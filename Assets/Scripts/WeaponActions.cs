@@ -8,17 +8,14 @@ public class WeaponActions : MonoBehaviour
 {
     public GameObject fireball;
     public GameObject waterBall;
-    public GameObject bane;
-    public GameObject laser;
     public Transform shotPoint;
     public int idOfSkillSocket = 1;
     private bool isChangingSkill;
     public LayerMask whatIsSolid;
-    private bool laserIsActive = false;
     private Animator gun;
     public Animator player;
     public GameObject inventory;
-    public Image laserIcon;
+    public Image waterBallIcon;
     public Sprite arms0;
     // Start is called before the first frame update
     void Start()
@@ -30,10 +27,10 @@ public class WeaponActions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Character.haveLaser)
-            laserIcon.enabled = true;
+        if (Character.haveWaterBall)
+            waterBallIcon.enabled = true;
         else
-            laserIcon.enabled = false;
+            waterBallIcon.enabled = false;
         if (Input.GetKeyDown(KeyCode.Alpha1))
             idOfSkillSocket = 1;
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -115,7 +112,7 @@ public class WeaponActions : MonoBehaviour
                 }
                 break;
             case 2:
-                if (SkillBar.GetSkillsCD()[idOfSkillSocket - 1] <= 0)
+                if (SkillBar.GetSkillsCD()[idOfSkillSocket - 1] <= 0 && Character.haveWaterBall)
                 {
                     if (Input.GetMouseButton(0) && inventory.activeSelf == false)
                     {
@@ -190,7 +187,6 @@ public class WeaponActions : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         gun.SetBool("IsAttack", false);
         yield return new WaitForSeconds(0.2f);
-        Debug.Log(transform.rotation.eulerAngles);
         Instantiate(spell, shotPoint.position, transform.rotation);
         Instantiate(spell, shotPoint.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 15));
         Instantiate(spell, shotPoint.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 15));

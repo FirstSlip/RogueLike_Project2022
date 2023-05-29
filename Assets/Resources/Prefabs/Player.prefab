@@ -100,6 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireball: {fileID: 2650280217086375089, guid: ba4fffdfaee09f94eb686ecc230876a1,
     type: 3}
+  waterBall: {fileID: 5243460634178309321, guid: beb13ff99374ca04c958f5e59a4e953b,
+    type: 3}
   bane: {fileID: 2650280217086375089, guid: cb9909c461b856e49bc957c0cde940e4, type: 3}
   laser: {fileID: 8166690288579183146, guid: 986f716a9e73d884f8cda97a8246b487, type: 3}
   shotPoint: {fileID: 4888087288800867528}
@@ -108,6 +110,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 6089511884617706990}
+  inventory: {fileID: 0}
+  laserIcon: {fileID: 0}
+  arms0: {fileID: 0}
 --- !u!114 &2497456134698826534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +229,9 @@ MonoBehaviour:
   ExpCrystal: {fileID: 0}
   levelUpMenu: {fileID: 0}
   levelUpText: {fileID: 0}
+  sTree: {fileID: 0}
+  blackScreen: {fileID: 0}
+  died: {fileID: 0}
 --- !u!114 &3184021102399984057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +247,8 @@ MonoBehaviour:
   speed: 6
   Shift: {fileID: 0}
   animator: {fileID: 6089511884617706990}
+  hpPotion: {fileID: 0}
+  inv: {fileID: 0}
 --- !u!50 &1807887698237275838
 Rigidbody2D:
   serializedVersion: 4
