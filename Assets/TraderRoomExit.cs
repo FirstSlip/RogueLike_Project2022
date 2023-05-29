@@ -70,6 +70,7 @@ public class TraderRoomExit : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         music.Stop();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Character>().SavePlayerState();
         SceneManager.LoadScene(4);
     }
 }

@@ -10,6 +10,7 @@ public class SkillTree : MonoBehaviour
     public int dmgAmp = 0;
     public int healthPool = 0;
     public int reducedDashCD = 0;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -35,6 +36,7 @@ public class SkillTree : MonoBehaviour
             SaveSerial.playerStats.Add("dexterity", 0);
             dexterity = 0;
         }
+
         dmgAmp = intelligence * 10;
         healthPool = strength * 20;
         reducedDashCD = dexterity * 5;

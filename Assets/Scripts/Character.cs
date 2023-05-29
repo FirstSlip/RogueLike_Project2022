@@ -17,6 +17,7 @@ public class Character : MonoBehaviour
     private bool isInvulnerable = false;
     public static int currentEXP = 0;
     public static int EXPToLevel = 10;
+    public static bool isFireballUpgraded = false;
     public Image ExpCrystal;
     private bool onLevelup = false;
     /*public List<Status> status = new List<Status>();
@@ -33,13 +34,31 @@ public class Character : MonoBehaviour
     void Start()
     {
         haveWaterBall = false;
-        Debug.Log(sTree.healthPool);
+        isFireballUpgraded = false;
         Health = 100 + sTree.healthPool;
         currentHealth = Health;
         levelUpMenu.SetActive(false);
         levelUpText.SetActive(false);
         died.gameObject.SetActive(false);
         GameObject.FindGameObjectWithTag("HitScreen").GetComponent<Image>().enabled = false;
+
+        if (SceneManager.GetActiveScene().name != "Game")
+        {
+            if (SaveSerial.playerStats.ContainsKey("currentHP"))
+                currentHealth = SaveSerial.playerStats["currentHP"];
+            if (SaveSerial.playerStats.ContainsKey("currentEXP"))
+                currentEXP = SaveSerial.playerStats["currentEXP"];
+            if (SaveSerial.playerStats.ContainsKey("isFireballUpgraded"))
+                isFireballUpgraded = Convert.ToBoolean(SaveSerial.playerStats["isFireballUpgraded"]);
+            if (SaveSerial.playerStats.ContainsKey("haveWaterBall"))
+                haveWaterBall = Convert.ToBoolean(SaveSerial.playerStats["haveWaterBall"]);
+        }
+    }
+
+    private void Awake()
+    {
+
+        
     }
 
     // Update is called once per frame
@@ -138,5 +157,14 @@ public class Character : MonoBehaviour
         isInvulnerable = true;
         yield return new WaitForSeconds(0.5f);
         isInvulnerable = false;
+    }
+
+    public void SavePlayerState()
+    {
+        SaveSerial.playerStats["currentHP"] = currentHealth;
+        SaveSerial.playerStats["currentEXP"] = currentEXP;
+        SaveSerial.playerStats["isFireballUpgraded"] = isFireballUpgraded ? 1 : 0;
+        SaveSerial.playerStats["haveWaterBall"] = haveWaterBall ? 1 : 0;
+        SaveSerial.SaveGame();
     }
 }
