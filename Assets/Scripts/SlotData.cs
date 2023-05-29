@@ -16,6 +16,5 @@ public class SlotData : MonoBehaviour, IDropHandler
             eventData.pointerDrag.GetComponent<RectTransform>().SetParent(GetComponent<RectTransform>(), false);
             eventData.pointerDrag.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 1);
         }
-        id = eventData.pointerDrag.GetComponent<ItemInfo>().id;
     }
 }

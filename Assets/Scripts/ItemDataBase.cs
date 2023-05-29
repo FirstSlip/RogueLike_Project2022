@@ -45,17 +45,17 @@ public class ItemDataBase : MonoBehaviour
     {
         items = new List<Item>()
         {
-            new Item(0, "Health Ring", "Кольцо, увеличивающее максимальное здоровье.",
-            new Dictionary<string, int>
-            {
-                {"Health", 20 }
-            }),
+            //new Item(0, "Health potion", "Самый обычный каменный меч.",
+            //new Dictionary<string, int>
+            //{
+            //    {"Attack", 10 }
+            //}),
 
-            new Item(1, "Dexterity Ring", "Кольцо, увеличивающее ловкость.",
-            new Dictionary<string, int>
-            {
-                {"Dexterity", 5 }
-            }),
+            //new Item(1, "Diamond Sword", "Мощный алмазный меч.",
+            //new Dictionary<string, int>
+            //{
+            //    {"Attack", 15 }
+            //}),
 
             //new Item(4, "Stone Shield", "Каменный щит.",
             //new Dictionary<string, int>

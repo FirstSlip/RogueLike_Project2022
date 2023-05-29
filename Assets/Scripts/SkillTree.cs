@@ -11,11 +11,6 @@ public class SkillTree : MonoBehaviour
     public int healthPool = 0;
     public int reducedDashCD = 0;
 
-    public int healthBuff;
-    public int dexterityBuff;
-    public int intelligenceBuff;
-    public int strengthBuff;
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -54,9 +49,9 @@ public class SkillTree : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dmgAmp = (intelligence + intelligenceBuff) * 10;
-        healthPool = (strength + strengthBuff) * 20 + healthBuff;
-        reducedDashCD = (dexterity + dexterityBuff) * 5;
+        dmgAmp = intelligence * 10;
+        healthPool = strength * 20;
+        reducedDashCD = dexterity * 5;
     }
 
     public void LevelUpInt()
