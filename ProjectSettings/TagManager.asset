@@ -11,6 +11,7 @@ TagManager:
   - MiniMap
   - Border
   - Canvas
+  - Music
   layers:
   - Default
   - TransparentFX

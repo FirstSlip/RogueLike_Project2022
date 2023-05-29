@@ -7,10 +7,13 @@ using UnityEngine.UI;
 public class TraderRoomExit : MonoBehaviour
 {
     public Image black;
+    private AudioSource music;
+    private float musicVolume;
     // Start is called before the first frame update
     void Start()
     {
-        
+        music = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
+        musicVolume = music.volume;
     }
 
     // Update is called once per frame
@@ -63,8 +66,10 @@ public class TraderRoomExit : MonoBehaviour
         for (float i = 0; i <= 100; i++)
         {
             black.color = new Color(0, 0, 0, i / 100);
+            music.volume -= musicVolume / 100;
             yield return new WaitForSeconds(0.01f);
         }
+        music.Stop();
         SceneManager.LoadScene(3);
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ResizeInMenu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public AudioSource music;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class ResizeInMenu : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void OnPointerEnter(PointerEventData eventData)
     {
         transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+        music.Play();
     }
 
     public void OnPointerExit(PointerEventData eventData)
