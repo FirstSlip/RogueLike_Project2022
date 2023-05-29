@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class WeaponActions : MonoBehaviour
 {
     public GameObject fireball;
+    public GameObject waterBall;
     public GameObject bane;
     public GameObject laser;
     public Transform shotPoint;
@@ -14,7 +15,6 @@ public class WeaponActions : MonoBehaviour
     private bool isChangingSkill;
     public LayerMask whatIsSolid;
     private bool laserIsActive = false;
-    private GameObject las;
     private Animator gun;
     public Animator player;
     public GameObject inventory;
@@ -23,7 +23,6 @@ public class WeaponActions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        las = new GameObject();
         gun = GetComponent<Animator>();
         //gun.enabled = false;
     }
@@ -106,90 +105,41 @@ public class WeaponActions : MonoBehaviour
         switch (idOfSkillSocket)
         {
             case 1:
-                laserIsActive = false;
-                Destroy(las);
                 if (SkillBar.GetSkillsCD()[idOfSkillSocket - 1] <= 0)
                 {
                     if (Input.GetMouseButton(0) && inventory.activeSelf == false)
                     {
                         SkillBar.GetSkillsCD()[idOfSkillSocket - 1] = SkillBar.GetStartSkillsCD()[idOfSkillSocket - 1];
-                        StartCoroutine(Attack());
+                        StartCoroutine(Attack(fireball));
                     }
                 }
                 break;
             case 2:
-                if (Input.GetMouseButton(0) && Character.haveLaser)
+                if (SkillBar.GetSkillsCD()[idOfSkillSocket - 1] <= 0)
                 {
-                    Character.attack = true;
-                    if (!laserIsActive)
+                    if (Input.GetMouseButton(0) && inventory.activeSelf == false)
                     {
-                        RaycastHit2D hitInfo = Physics2D.Raycast(shotPoint.position, transform.right, 200f, whatIsSolid);
-                        //hitInfo.point += new Vector2(1, 0);
-                        las = Instantiate(laser, new Vector2(shotPoint.position.x, shotPoint.position.y) +
-                        (hitInfo.point - new Vector2(shotPoint.position.x, shotPoint.position.y)) / 2f, transform.rotation);
-                        las.transform.localScale = new Vector3((hitInfo.point - new Vector2(shotPoint.position.x, shotPoint.position.y)).magnitude / 5.76f,
-                        5f, 1);
-                        laserIsActive = true;
-                        if (las.transform.position.y - GameObject.FindGameObjectWithTag("Player").transform.position.y > 0)
-                            las.GetComponent<SpriteRenderer>().sortingOrder = 9;
-                        else
-                            las.GetComponent<SpriteRenderer>().sortingOrder = 11;
-                        StartCoroutine(AttackLaser());
-                        if (hitInfo.collider.CompareTag("Enemy"))
-                        {
-                            hitInfo.collider.gameObject.GetComponentInParent<Enemy>().TakeDamage(2);
-                        }
-                    }
-                    else
-                    {
-                        RaycastHit2D hitInfo = Physics2D.Raycast(shotPoint.position, transform.right, 200f, whatIsSolid);
-                        las.transform.position = new Vector2(shotPoint.position.x, shotPoint.position.y) +
-                        (hitInfo.point - new Vector2(shotPoint.position.x, shotPoint.position.y)) / 2f;
-                        las.transform.rotation = transform.rotation;
-                        las.transform.localScale = new Vector3((hitInfo.point - new Vector2(shotPoint.position.x, shotPoint.position.y)).magnitude,
-                        5f, 1);
-                        if (las.transform.position.y - GameObject.FindGameObjectWithTag("Player").transform.position.y > 0)
-                            las.GetComponent<SpriteRenderer>().sortingOrder = 9;
-                        else
-                            las.GetComponent<SpriteRenderer>().sortingOrder = 11;
-                        if (hitInfo.collider.CompareTag("Enemy"))
-                        {
-                            hitInfo.collider.gameObject.GetComponentInParent<Enemy>().TakeDamage(1);
-                        }
+                        SkillBar.GetSkillsCD()[idOfSkillSocket - 1] = SkillBar.GetStartSkillsCD()[idOfSkillSocket - 1];
+                        StartCoroutine(CastWaterBall(waterBall, difference));
                     }
                 }
-                else
+                break;
+            case 3:
+                if (SkillBar.GetSkillsCD()[idOfSkillSocket - 1] <= 0)
                 {
-                    gun.gameObject.GetComponent<Animator>().enabled = true;
-                }
-
-                if (Input.GetMouseButtonUp(0))
-                {
-                    laserIsActive = false;
-                    Destroy(las);
-                    gun.SetBool("IsAttack", false);
-                    player.SetBool("IsAttack", false);
-                    Character.attack = false;
-                    gun.gameObject.GetComponent<Animator>().enabled = true;
+                    if (Input.GetMouseButton(0) && inventory.activeSelf == false)
+                    {
+                        SkillBar.GetSkillsCD()[idOfSkillSocket - 1] = SkillBar.GetStartSkillsCD()[idOfSkillSocket - 1];
+                        StartCoroutine(TripleAttack(fireball));
+                    }
                 }
                 break;
             default:
                 break;
         }
-
-
-    }
-    private IEnumerator AttackLaser()
-    {
-        gun.SetBool("IsAttack", true);
-        player.SetBool("IsAttack", true);
-        yield return new WaitForSeconds(0.3f);
-        //gun.gameObject.GetComponent<Animator>().enabled = false;
-        //gun.gameObject.GetComponent<SpriteRenderer>().sprite = arms0;
-        //gun.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
     }
 
-    private IEnumerator Attack()
+    private IEnumerator Attack(GameObject spell)
     {
         Character.attack = true;
         //gun.enabled = true;
@@ -198,7 +148,52 @@ public class WeaponActions : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         gun.SetBool("IsAttack", false);
         yield return new WaitForSeconds(0.2f);
-        Instantiate(fireball, shotPoint.position, transform.rotation);
+        Instantiate(spell, shotPoint.position, transform.rotation);
+        yield return new WaitForSeconds(0.2f);
+        //gun.enabled = false;
+        player.SetBool("IsAttack", false);
+        Character.attack = false;
+    }
+    private IEnumerator CastWaterBall(GameObject spell, Vector3 difference)
+    {
+        Character.attack = true;
+
+        var waterball = Instantiate(spell, shotPoint.position, transform.rotation);
+        if (difference.y > 0) waterBall.GetComponent<SpriteRenderer>().sortingOrder = 7;
+        else waterBall.GetComponent<SpriteRenderer>().sortingOrder = 5;
+
+        waterball.GetComponent<Projectile>().isStopped = true;
+        waterball.GetComponent<Animator>().Play("WaterBallCast");
+        yield return new WaitForSeconds(0.2f);
+        waterball.GetComponent<Projectile>().isStopped = false;
+        yield return new WaitForSeconds(0.05f);
+        waterball.GetComponent<Animator>().Play("WaterBallDefault");
+
+        //gun.enabled = true;
+        gun.SetBool("IsAttack", true);
+        player.SetBool("IsAttack", true);
+        yield return new WaitForSeconds(0.2f);
+        gun.SetBool("IsAttack", false);
+        
+        
+        yield return new WaitForSeconds(0.2f);
+        //gun.enabled = false;
+        player.SetBool("IsAttack", false);
+        Character.attack = false;
+    }
+    private IEnumerator TripleAttack(GameObject spell)
+    {
+        Character.attack = true;
+        //gun.enabled = true;
+        gun.SetBool("IsAttack", true);
+        player.SetBool("IsAttack", true);
+        yield return new WaitForSeconds(0.1f);
+        gun.SetBool("IsAttack", false);
+        yield return new WaitForSeconds(0.2f);
+        Debug.Log(transform.rotation.eulerAngles);
+        Instantiate(spell, shotPoint.position, transform.rotation);
+        Instantiate(spell, shotPoint.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 15));
+        Instantiate(spell, shotPoint.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 15));
         yield return new WaitForSeconds(0.2f);
         //gun.enabled = false;
         player.SetBool("IsAttack", false);

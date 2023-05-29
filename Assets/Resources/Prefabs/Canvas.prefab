@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00435c6319780b944aac3a04edb0ae51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableHitScreen: 0
 --- !u!1 &132514098
 GameObject:
   m_ObjectHideFlags: 0
@@ -5535,7 +5536,7 @@ PrefabInstance:
     - target: {fileID: 1609543917542529749, guid: fd1333d479ad41c428e6312acbb015f8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1609543917547038045, guid: fd1333d479ad41c428e6312acbb015f8,
         type: 3}
