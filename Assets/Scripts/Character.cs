@@ -57,8 +57,9 @@ public class Character : MonoBehaviour
 
     private void Awake()
     {
+        SaveSerial.SaveGame();
 
-        
+
     }
 
     // Update is called once per frame
