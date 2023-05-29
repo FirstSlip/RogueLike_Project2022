@@ -24,7 +24,7 @@ public class PickUp : MonoBehaviour
             GetComponentsInChildren<SpriteRenderer>()[1].enabled = true;
             if (Input.GetKeyDown(KeyCode.E))
             {
-                inventory.GetComponent<Inventory>().AddItem(gameObject.GetComponent<ItemInfo>().id);
+                inventory.GetComponent<Inventory>().AddItem(gameObject.name);
                 Destroy(gameObject);
             }
         }
